@@ -198,20 +198,20 @@ You will be provided with a wireframe that shows an overview of the app along wi
 - When you click this button a form appears so you can post a story
 - You should only be able to do this when you are logged in
 
-| Criteria                                                                | Points |
-| ----------------------------------------------------------------------- | ------ |
-| There is a button with `Post a cool story bro` on `My page`             | 0.5    |
-| Clicking the button makes a form appear                                 | 1      |
-| The form has inputs for name, content and imageUrl                      | 0.5    |
-| When a user enters an imageUrl, they can see a preview of the image     | 1      |
-| When the form is submitted a POST request is sent to the server         | 1      |
-| An Authorization header is set in the request                           | 1      |
-| The auth middleware is used on the server side to authorize the request | 1      |
-| The POST request updates the database with input from the user          | 1      |
-| The story saved in the database has the correct `homepageId`            | 1      |
-| The user sees a success message if the story was posted successfully    | 1      |
-| The success message is an alert, confirm or prompt popup or console.log | -1     |
-| Total                                                                   | 9      |
+| Criteria                                                                | Points  |
+| ----------------------------------------------------------------------- | ------- |
+| There is a button with `Post a cool story bro` on `My page`             | 0.5 0.5 |
+| Clicking the button makes a form appear                                 | 1       |
+| The form has inputs for name, content and imageUrl                      | 0.5     |
+| When a user enters an imageUrl, they can see a preview of the image     | 1       |
+| When the form is submitted a POST request is sent to the server         | 1       |
+| An Authorization header is set in the request                           | 1       |
+| The auth middleware is used on the server side to authorize the request | 1       |
+| The POST request updates the database with input from the user          | 1       |
+| The story saved in the database has the correct `homepageId`            | 1       |
+| The user sees a success message if the story was posted successfully    | 1       |
+| The success message is an alert, confirm or prompt popup or console.log | -1      |
+| Total                                                                   | 9       |
 
 ### 6. As a logged in user I want to be able to edit my homepage, so I can express myself
 
@@ -222,18 +222,18 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 **Hint:** Make the backgroundColor and color inputs using `<input type="color">`, documentation on it can be found on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color)
 
-| Criteria                                                                 | Points |
-| ------------------------------------------------------------------------ | ------ |
-| There is a button with `Edit my page` on `My page`                       | 0.5    |
-| Clicking the button makes a form appear                                  | 1      |
-| The form has inputs for title, description, color and background color   | 0.5    |
-| The values in the form start as the current values for your homepage     | 2      |
-| When the form is submitted a PATCH request is sent to the server         | 1      |
-| An Authorization header is set in the request                            | 1      |
-| The auth middleware is used on the server side to authorize the request  | 1      |
-| The PATCH request updates the database with input from the user          | 1      |
-| The user can see the results of their update without refreshing the page | 2      |
-| Total                                                                    | 10     |
+| Criteria                                                                 | Points  |
+| ------------------------------------------------------------------------ | ------- |
+| There is a button with `Edit my page` on `My page`                       | 0.5 0.5 |
+| Clicking the button makes a form appear                                  | 1       |
+| The form has inputs for title, description, color and background color   | 0.5     |
+| The values in the form start as the current values for your homepage     | 2       |
+| When the form is submitted a PATCH request is sent to the server         | 1       |
+| An Authorization header is set in the request                            | 1       |
+| The auth middleware is used on the server side to authorize the request  | 1       |
+| The PATCH request updates the database with input from the user          | 1       |
+| The user can see the results of their update without refreshing the page | 2       |
+| Total                                                                    | 10      |
 
 ### 7. Finishing up
 
@@ -245,11 +245,11 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 | Criteria                                                                   | Points |
 | -------------------------------------------------------------------------- | ------ |
-| Student performed an accurate self assessment (max off by + or - 7 points) | 2      |
-| Student can reflect on their process by writing a reflection of ~200 words | 2      |
-| Student has regularly committed changes (at least 1 commit per feature)    | 1      |
-| Student has pushed their repository using git                              | 1      |
-| Total                                                                      | 6      |
+| Student performed an accurate self assessment (max off by + or - 7 points) | 2 2    |
+| Student can reflect on their process by writing a reflection of ~200 words | 2 2    |
+| Student has regularly committed changes (at least 1 commit per feature)    | 1 1    |
+| Student has pushed their repository using git                              | 1 1    |
+| Total                                                                      | 6 6    |
 
 ### Self assessment
 

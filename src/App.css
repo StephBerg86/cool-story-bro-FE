@@ -1,0 +1,15 @@
+.homepagesPage {
+  display: flex;
+}
+.titlehomepage {
+  margin-left: 1.6rem;
+}
+
+.storyImages {
+  width: 40rem;
+  display: flex;
+}
+
+.stories {
+  margin: 1.5rem;
+}

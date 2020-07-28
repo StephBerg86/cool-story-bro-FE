@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../../store/user/selectors";
 import Homepage from "../../components/Homepage";
 import Stories from "../../components/Stories";
+import EditPageForm from "./EditPageForm";
+import PostStoryFom from "./PostStoryFom";
 
 export default function MyPage() {
   const { token, homepage, id } = useSelector(selectUser);
@@ -15,7 +17,6 @@ export default function MyPage() {
 
   return (
     <div>
-      hi this is my page
       <Homepage
         id={homepage.id}
         title={homepage.title}
@@ -34,9 +35,9 @@ export default function MyPage() {
           </div>
         ) : null}
 
-        {editMode ? <p>My homepage form / edit page</p> : null}
+        {editMode ? <EditPageForm /> : null}
 
-        {postStoryMode ? <p>my story form/ post story</p> : null}
+        {postStoryMode ? <PostStoryFom /> : null}
 
         <Stories homepage={homepage} />
       </div>

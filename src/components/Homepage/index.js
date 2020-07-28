@@ -11,13 +11,15 @@ export default function Homepage(props) {
         color: props.color,
       }}
     >
-      <h1>{props.title}</h1>
-      <p>{props.description}</p>
-      {props.showLink ? (
-        <Link to={`/homepages/${props.id}`}>
-          <Button>Visit page</Button>
-        </Link>
-      ) : null}
+      <div>
+        <h1>{props.title}</h1>
+        <p>{props.description}</p>
+        {props.showLink ? (
+          <Link to={`/homepages/${props.id}`}>
+            <Button>Visit page</Button>
+          </Link>
+        ) : null}
+      </div>
     </Jumbotron>
   );
 }

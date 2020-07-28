@@ -2,22 +2,25 @@ import React from "react";
 
 export default function Stories(props) {
   return (
-    <div>
+    <div className="stories">
       {props.homepage.stories.map((story) => {
         return (
-          <div key={story.id}>
+          <div
+            key={story.id}
+            style={{
+              backgroundColor: `${props.homepage.backgroundColor}99`,
+              color: props.homepage.color,
+            }}
+          >
             <h3>{story.name}</h3>
             {story.imageUrl ? (
-              <img src={story.imageUrl} alt={story.name} />
+              <img
+                className="storyImages"
+                src={story.imageUrl}
+                alt={story.name}
+              />
             ) : null}
-            <p
-              style={{
-                backgroundColor: `${props.homepage.backgroundColor}99`,
-                color: props.homepage.color,
-              }}
-            >
-              {story.content}
-            </p>
+            {story.content}
           </div>
         );
       })}
