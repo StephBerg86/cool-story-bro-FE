@@ -1,44 +1,5 @@
 # Week 6 practice assessment
 
-## Learning goals & some tips
-
-For transparency and clarity, these are the learning goals we will be testing:
-
-#### Frontend
-
-- Basic knowledge of React
-  - components
-  - props
-  - useState
-  - useEffect
-  - event listeners & handlers
-- Routing & dynamic routing using react-router-dom
-- Making a reducers that transform the redux state
-- Using selectors to take state from the redux store and use it in your components
-- Dispatching actions from your components to change the redux state
-- Seperating reducers & actions & selectors
-- Using async actions (redux thunk)
-- Sending GET / POST / PATCH and DELETE requests using axios
-- Setting an authorization header with a JWT to make an authorized request
-
-#### Backend
-
-- Connecting to a remote DB like an ElephantSQL instance
-- Generating models & migrations using sequelize-cli
-- Doing database validation using sequelize models (e.g. allowNull: false, unique: true)
-- Implementing hasMany, hasOne and belongsTo relations
-- Adding foreign keys to models in migrations
-- Adding relations to sequelize models
-- Generating seed data using sequelize-cli
-- Creating, updating & deleting records from the database using sequelize models
-- Querying the database using sequelize models
-- Eager loading related models using sequelize `include`
-- Implementing GET / POST / PATCH / DELETE routes in express
-- Sending responses with express
-- Setting status codes to responses in express
-- Seperating routes using the express Router
-- Using the auth middleware to manage authorization for routes in express
-
 ## What are we building?
 
 We are building a webapp where people can have their own homepage and post stories. It is called `Cool story bro`. It has multiple pages
@@ -52,7 +13,11 @@ We are building a webapp where people can have their own homepage and post stori
 
 ## Wireframe
 
-You will be provided with a wireframe that shows an overview of the app along with this README
+<img src="https://github.com/StephBerg86/cool-story-bro-FE/blob/master/src/Images/Screenshot%202020-09-19%20at%2018.42.17%20(2).png" width=500 />
+<img src="https://github.com/StephBerg86/cool-story-bro-FE/blob/master/src/Images/Screenshot%202020-09-19%20at%2018.42.27%20(2).png" width=500 />
+<img src="https://github.com/StephBerg86/cool-story-bro-FE/blob/master/src/Images/Screenshot%202020-09-19%20at%2018.42.34%20(2).png" width=500 />
+<img src="https://github.com/StephBerg86/cool-story-bro-FE/blob/master/src/Images/Screenshot%202020-09-19%20at%2018.42.41%20(2).png" width=500 />
+<img src="https://github.com/StephBerg86/cool-story-bro-FE/blob/master/src/Images/Screenshot%202020-09-19%20at%2018.42.53%20(2).png" width=500 />
 
 ## Features
 
@@ -60,32 +25,12 @@ You will be provided with a wireframe that shows an overview of the app along wi
 
 - The default page you see when you go to `/` should be a list of homepages
 - Each homepage is displayed in the colors their users have customized
-- There is a button linking to the details of that homepage
-
-| Criteria                                                                   | Points |
-| -------------------------------------------------------------------------- | ------ |
-| The frontend route `/` displays a list of homepages                        | 1 1    |
-| The homepages are fetched from the server                                  | 1 1    |
-| The homepages have a backgroundColor and color as specified by their users | 1 1    |
-| An array of homepages is stored and managed by redux                       | 1 1    |
-| A selectors and actions are defined in a seperate files                    | 1 1    |
-| Each homepage has a `Visit page` button, it links to a homepage's details  | 1 1    |
-| Total                                                                      | 6 6    |
+- There is a button linking to the details of that homepage                                      
 
 ### 2. As a user interested in people's lives, I want to read people's stories, so I can be informed
 
 - When we click on the `Visit page` button of a homepage we see the details of a homepage
 - On this detail page we can see the stories belonging to that homepage
-
-| Criteria                                                                  | Points |
-| ------------------------------------------------------------------------- | ------ |
-| The frontend route `/homepages/:id` displays a detail page for a homepage | 1 1    |
-| The stories are displayed with a name, description and an image           | 1 1    |
-| The homepage and its stories are fetched from the server                  | 1 1    |
-| The homepage and its stories are queried from the database using 1 query  | 1 1    |
-| The homepage has a backgroundColor and color as specified by their user   | 1 1    |
-| The stories are displayed in order, from newest to oldest (`createdAt`)   | 2 1    |
-| Total                                                                     | 7 7    |
 
 ### 3. As a logged in user I want to be able to view my page
 
@@ -94,15 +39,6 @@ You will be provided with a wireframe that shows an overview of the app along wi
 - Ideally, we add the user's homepage to the information being fetched when we login
 - That means modifying the `/me` and `/login` endpoints to also send your homepage in the response
 - Alternatively fetch the data from the endpoint set up for feature #2 (detail page)
-
-| Criteria                                                                   | Points |
-| -------------------------------------------------------------------------- | ------ |
-| You see a `My page` link in the navbar (but only when you're logged in)    | 1 1    |
-| When you click `My page` you see your homepage and your stories            | 1 1    |
-| The homepage and its stories are fetched from the server                   | 1 1    |
-| Your homepage & stories are fetched using the `/me` and `/login` endpoints | 2 2    |
-| Your homepage's details are managed by redux                               | 2 2    |
-| Total                                                                      | 7 7    |
 
 ### 4. As a user signing up I want a homepage to be created for me
 
@@ -114,15 +50,6 @@ You will be provided with a wireframe that shows an overview of the app along wi
   - color: #000000 (black)
 - You'll have to modify the existing `/signup` endpoint to make this happen
 
-| Criteria                                                                  | Points |
-| ------------------------------------------------------------------------- | ------ |
-| When a user sign's up a homepage is created ands saved to the database    | 1 1    |
-| The new homepage is assigned the userId of the user that just signed up   | 1 1    |
-| The new homepage has values for title, backgroundColor and color          | 1 1    |
-| The homepage is sent in the response of `/signup` along with the new user | 1 1    |
-| The homepage is stored in the redux store in the frontend                 | 1 1    |
-| Total                                                                     | 5 5    |
-
 ### 5. As a logged in user I want to be able to post stories on homepage, so I can share my adventures with the world
 
 - You should be able to post a story on your homepage
@@ -130,39 +57,9 @@ You will be provided with a wireframe that shows an overview of the app along wi
 - When you click this button a form appears so you can post a story
 - You should only be able to do this when you are logged in
 
-| Criteria                                                                | Points  |
-| ----------------------------------------------------------------------- | ------- |
-| There is a button with `Post a cool story bro` on `My page`             | 0.5 0.5 |
-| Clicking the button makes a form appear                                 | 1 1     |
-| The form has inputs for name, content and imageUrl                      | 0.5 0.5 |
-| When a user enters an imageUrl, they can see a preview of the image     | 1 1     |
-| When the form is submitted a POST request is sent to the server         | 1 x     |
-| An Authorization header is set in the request                           | 1 ?     |
-| The auth middleware is used on the server side to authorize the request | 1       |
-| The POST request updates the database with input from the user          | 1       |
-| The story saved in the database has the correct `homepageId`            | 1       |
-| The user sees a success message if the story was posted successfully    | 1       |
-| The success message is an alert, confirm or prompt popup or console.log | -1      |
-| Total                                                                   | 9       |
-
 ### 6. As a logged in user I want to be able to edit my homepage, so I can express myself
 
 - Your homepage has a title, description backgroundColor and color. You should be able to change those
 - In the `My page` section there should be a button to `Edit my page`
 - When you click this button a form appears so you can edit your page
 - You should only be able to do this if you're logged in
-
-**Hint:** Make the backgroundColor and color inputs using `<input type="color">`, documentation on it can be found on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color)
-
-| Criteria                                                                 | Points  |
-| ------------------------------------------------------------------------ | ------- |
-| There is a button with `Edit my page` on `My page`                       | 0.5 0.5 |
-| Clicking the button makes a form appear                                  | 1       |
-| The form has inputs for title, description, color and background color   | 0.5     |
-| The values in the form start as the current values for your homepage     | 2       |
-| When the form is submitted a PATCH request is sent to the server         | 1       |
-| An Authorization header is set in the request                            | 1       |
-| The auth middleware is used on the server side to authorize the request  | 1       |
-| The PATCH request updates the database with input from the user          | 1       |
-| The user can see the results of their update without refreshing the page | 2       |
-| Total                                                                    | 10      |
