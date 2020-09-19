@@ -1,16 +1,5 @@
 # Week 6 practice assessment
 
-(This is a markdown .MD file, if you are reading this in vs-code, right click the file and select `Open Preview`)
-
-#### Rules for practice assessment
-
-You are allowed to ask for help of teachers and fellow students.
-
-#### Sample solution
-
-[Client](https://github.com/Codaisseur/cool-story-bro-client)
-[Server](https://github.com/Codaisseur/cool-story-bro-server)
-
 ## Learning goals & some tips
 
 For transparency and clarity, these are the learning goals we will be testing:
@@ -50,77 +39,20 @@ For transparency and clarity, these are the learning goals we will be testing:
 - Seperating routes using the express Router
 - Using the auth middleware to manage authorization for routes in express
 
-If this sounds like a large list, it is, and it's because you've learned a tremendous amount of things these past weeks! Don't let it scare or overwhelm you though, you have seen all these things. Don't hesitate to use the reader, Google (Stackoverflow), or the documentation links we provide below.
-
-**TIP: Read the assignment carefully!** It is easy to accidentally deviate from an assignment, resulting in a frustrating homework experience. Taking the time to read the exercise can save you time and effort.
-
-**TIP: Don't get stuck!** If you feel stuck, try taking a small walk, continuing on to a next step, or talking out loud about the problem you're facing (programmers call this "rubber-ducking"). Everybody can get stuck, but don't let it stop you.
-
 ## What are we building?
 
 We are building a webapp where people can have their own homepage and post stories. It is called `Cool story bro`. It has multiple pages
 
-- Signup & Login pages (already implemented in the starter kit)
+- Signup & Login pages
 - A page with a list of homepages of different users
 - A detail page for a homepage where you can view a users' stories
 - A page where you can view your own homepage
 - A form where you can edit your homepage
 - A form where you can post a story
 
-It is recommended that you use the react-redux & express templates where the login / signup flow has been implemented.
-
-[Frontend starter](https://github.com/Codaisseur/react-redux-jwt-bootstrap-template)
-[Backend starter](https://github.com/Codaisseur/express-template)
-
 ## Wireframe
 
 You will be provided with a wireframe that shows an overview of the app along with this README
-
-## Entities
-
-### Homepage
-
-| key             | data type        | required | notes                             |
-| --------------- | ---------------- | -------- | --------------------------------- |
-| id              | Integer          | yes      | Already added by model:generate   |
-| title           | String           | yes      |                                   |
-| description     | Text             | no       |                                   |
-| backgroundColor | String (hexcode) | no       | default should be #ffffff (white) |
-| color           | String (hexcode) | no       | default should be #000000 (black) |
-| createdAt       | Date             | yes      | Already added by model:generate   |
-| updatedAt       | Date             | yes      | Already added by model:generate   |
-| userId          | Integer          | yes      | Foreign key (references a user)   |
-
-**Relations:**
-
-- homepage belongs to user
-- user has one homepage
-
-### Story
-
-| key        | data type | required | notes                               |
-| ---------- | --------- | -------- | ----------------------------------- |
-| id         | Integer   | yes      | Already added by model:generate     |
-| name       | String    | yes      |                                     |
-| content    | Text      | no       |                                     |
-| imageUrl   | String    | no       |                                     |
-| createdAt  | Date      | yes      | Already added by model:generate     |
-| updatedAt  | Date      | yes      | Already added by model:generate     |
-| homepageId | Integer   | yes      | Foreign key (references a homepage) |
-
-**Relations:**
-
-- story belongs to homepage
-- homepage has many story
-
-| Criteria                                                               | Points |
-| ---------------------------------------------------------------------- | ------ |
-| Server contains sequelize models for Homepage & Story                  | 2 2    |
-| Server contains migrations to create homepages and stories tables      | 2 2    |
-| title in homepage and name in story are validated in model & migration | 2 2    |
-| User, Homepage and Story models are correctly related                  | 2 2    |
-| Seeders are present to create at least 2 homepages and 4 stories       | 2 2    |
-| Total                                                                  | 10 10  |
 
 ## Features
 
@@ -201,11 +133,11 @@ You will be provided with a wireframe that shows an overview of the app along wi
 | Criteria                                                                | Points  |
 | ----------------------------------------------------------------------- | ------- |
 | There is a button with `Post a cool story bro` on `My page`             | 0.5 0.5 |
-| Clicking the button makes a form appear                                 | 1       |
-| The form has inputs for name, content and imageUrl                      | 0.5     |
-| When a user enters an imageUrl, they can see a preview of the image     | 1       |
-| When the form is submitted a POST request is sent to the server         | 1       |
-| An Authorization header is set in the request                           | 1       |
+| Clicking the button makes a form appear                                 | 1 1     |
+| The form has inputs for name, content and imageUrl                      | 0.5 0.5 |
+| When a user enters an imageUrl, they can see a preview of the image     | 1 1     |
+| When the form is submitted a POST request is sent to the server         | 1 x     |
+| An Authorization header is set in the request                           | 1 ?     |
 | The auth middleware is used on the server side to authorize the request | 1       |
 | The POST request updates the database with input from the user          | 1       |
 | The story saved in the database has the correct `homepageId`            | 1       |
@@ -234,33 +166,3 @@ You will be provided with a wireframe that shows an overview of the app along wi
 | The PATCH request updates the database with input from the user          | 1       |
 | The user can see the results of their update without refreshing the page | 2       |
 | Total                                                                    | 10      |
-
-### 7. Finishing up
-
-- Self assess: Score your assessment yourself using the table below
-- Write a reflection about this assessment & your learning process in `REFLECTION.md`:
-  - What did you do well, process wise
-  - What would you do differently next time to improve, process wise
-- Commit your code and use messages when you commit, push it to your respository using `git push origin master`
-
-| Criteria                                                                   | Points |
-| -------------------------------------------------------------------------- | ------ |
-| Student performed an accurate self assessment (max off by + or - 7 points) | 2 2    |
-| Student can reflect on their process by writing a reflection of ~200 words | 2 2    |
-| Student has regularly committed changes (at least 1 commit per feature)    | 1 1    |
-| Student has pushed their repository using git                              | 1 1    |
-| Total                                                                      | 6 6    |
-
-### Self assessment
-
-| Section                      | Max Points | Self assessed points | Assessor |
-| ---------------------------- | ---------- | -------------------- | -------- |
-| 0 Migrations, models & seeds | 10         | 10/10                | 0/10     |
-| 1 Homepages list             | 6          | 6/6                  | 0/6      |
-| 2 Homepage details           | 7          | 7/7                  | 0/7      |
-| 3 My page                    | 7          | 7/7                  | 0/7      |
-| 4 Homepage created on signup | 5          | 5/5                  | 0/5      |
-| 5 Posting stories            | 9          | 0/9                  | 0/9      |
-| 6 Editing your homepage      | 10         | 0/10                 | 0/10     |
-| 7 Finishing up               | 6          | 6/6                  | 0/6      |
-| Total                        | 60         | 0/60                 | 0/60     |
