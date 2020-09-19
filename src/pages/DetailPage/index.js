@@ -19,16 +19,20 @@ export default function DetailPage() {
   console.log("homepages", homepage);
 
   return (
-    <div>
-      <Homepage
-        id={homepage.id}
-        title={homepage.title}
-        description={homepage.description}
-        backgroundColor={homepage.backgroundColor}
-        color={homepage.color}
-        showLink={false}
-      />
-      <Stories homepage={homepage} />
-    </div>
+    <>
+      <div className="detailHP">
+        <Homepage
+          id={homepage.id}
+          title={homepage.title}
+          description={homepage.description}
+          backgroundColor={homepage.backgroundColor}
+          color={homepage.color}
+          showLink={false}
+        />
+      </div>
+      <div className="story">
+        <Stories homepage={homepage} />
+      </div>
+    </>
   );
 }

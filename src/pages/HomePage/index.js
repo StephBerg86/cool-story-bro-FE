@@ -13,23 +13,20 @@ export default function HomePage() {
   }, [dispatch]);
 
   return (
-    <div>
-      <h2 className="titlehomepage">Homepages</h2>
-      <div className="homepagesPage">
-        {homepages.map((homepage) => {
-          return (
-            <Homepage
-              key={homepage.id}
-              id={homepage.id}
-              title={homepage.title}
-              description={homepage.description}
-              backgroundColor={homepage.backgroundColor}
-              color={homepage.color}
-              showLink={true}
-            />
-          );
-        })}
-      </div>
+    <div className="homepagesPage">
+      {homepages.map((homepage) => {
+        return (
+          <Homepage
+            key={homepage.id}
+            id={homepage.id}
+            title={homepage.title}
+            description={homepage.description}
+            backgroundColor={homepage.backgroundColor}
+            color={homepage.color}
+            showLink={true}
+          />
+        );
+      })}
     </div>
   );
 }

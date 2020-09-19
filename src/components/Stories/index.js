@@ -2,11 +2,12 @@ import React from "react";
 
 export default function Stories(props) {
   return (
-    <div className="stories">
+    <div>
       {props.homepage.stories.map((story) => {
         return (
           <div
             key={story.id}
+            className="stories"
             style={{
               backgroundColor: `${props.homepage.backgroundColor}99`,
               color: props.homepage.color,
@@ -20,7 +21,7 @@ export default function Stories(props) {
                 alt={story.name}
               />
             ) : null}
-            {story.content}
+            <div className="storyContent">{story.content}</div>
           </div>
         );
       })}

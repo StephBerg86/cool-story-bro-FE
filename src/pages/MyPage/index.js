@@ -5,6 +5,7 @@ import Homepage from "../../components/Homepage";
 import Stories from "../../components/Stories";
 import EditPageForm from "./EditPageForm";
 import PostStoryFom from "./PostStoryFom";
+import Button from "react-bootstrap/Button";
 
 export default function MyPage() {
   const { token, homepage, id } = useSelector(selectUser);
@@ -17,21 +18,33 @@ export default function MyPage() {
 
   return (
     <div>
-      <Homepage
-        id={homepage.id}
-        title={homepage.title}
-        description={homepage.description}
-        backgroundColor={homepage.backgroundColor}
-        color={homepage.color}
-        showLink={false}
-      />
-      <div>
+      <div className="detailHP">
+        <Homepage
+          id={homepage.id}
+          title={homepage.title}
+          description={homepage.description}
+          backgroundColor={homepage.backgroundColor}
+          color={homepage.color}
+          showLink={false}
+        />
+      </div>
+      <div className="editPage">
         {displayButtons ? (
           <div>
-            <button onClick={() => setEditMode(true)}>Edit my page</button>
-            <button onClick={() => setpostStoryMode(true)} className="mt-2">
+            <Button
+              className="buttonsMyPage"
+              variant="secondary"
+              onClick={() => setEditMode(true)}
+            >
+              Edit my page
+            </Button>
+            <Button
+              className="buttonsMyPage"
+              variant="secondary"
+              onClick={() => setpostStoryMode(true)}
+            >
               Post a cool story bro
-            </button>
+            </Button>
           </div>
         ) : null}
 

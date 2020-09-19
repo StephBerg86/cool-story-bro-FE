@@ -10,13 +10,14 @@ export default function Homepage(props) {
         backgroundColor: props.backgroundColor,
         color: props.color,
       }}
+      className="HP"
     >
       <div>
         <h1>{props.title}</h1>
         <p>{props.description}</p>
         {props.showLink ? (
           <Link to={`/homepages/${props.id}`}>
-            <Button>Visit page</Button>
+            <Button variant="secondary">Visit page</Button>
           </Link>
         ) : null}
       </div>
