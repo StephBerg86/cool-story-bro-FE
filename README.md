@@ -11,7 +11,7 @@ We are building a webapp where people can have their own homepage and post stori
 - A form where you can edit your homepage
 - A form where you can post a story
 
-## Wireframe
+## Screenshots
 
 <img src="https://github.com/StephBerg86/cool-story-bro-FE/blob/master/src/Images/Screenshot%202020-09-19%20at%2018.42.17%20(2).png" width=500 />
 <img src="https://github.com/StephBerg86/cool-story-bro-FE/blob/master/src/Images/Screenshot%202020-09-19%20at%2018.42.27%20(2).png" width=500 />
